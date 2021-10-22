@@ -4,6 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class IndexableListTest {
 
+    /*Exemplo de criação da lista com dois vetores
+        *String[] vetorEsquerdo = {"morango", "maça", "uva"};
+        *String[] vetorDireito = {"manga", "abacaxi", "banana"};
+        *IndexableList<String> testLista = new IndexableList(vetorEsquerdo, vetorDireito);
+     */
+
     @Test
     void acrescentar() {
     }
