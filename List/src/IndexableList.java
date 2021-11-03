@@ -80,7 +80,7 @@ public class IndexableList<E> {
   public void add(int index, E element) {
     if (index < (size() + 1) / 2) {
       if (arrayEsquerda.length == numElemEsquerda) {
-        aumentarEsquerdaArray(999);
+        aumentarEsquerdaArray(MAX_VALOR);
       }
       numElemEsquerda++;
       for (int i = 0; i < index; i++) {
@@ -102,7 +102,7 @@ public class IndexableList<E> {
   public void aumentarEsquerdaArray(int extensao) {
     Object[] prevArray = arrayEsquerda;
     arrayEsquerda = new Object[arrayEsquerda.length + extensao];
-    for (int i = 0; i <= numElemEsquerda; i++) {
+    for (int i = 0; i < numElemEsquerda; i++) {
       arrayEsquerda[i] = prevArray[i];
     }
   }
@@ -128,7 +128,7 @@ public class IndexableList<E> {
         return true;
       }
     }
-    return true;
+    return false;
   }
 
   /* @description: Retorna o elemento de uma posição específica da lista
@@ -158,7 +158,7 @@ public class IndexableList<E> {
         return numElemEsquerda + i;
       }
     }
-    return 1;
+    return -3;
   }
 
   /* @description: Retorna true se a lista estiver sem nenhum elemento
@@ -208,7 +208,7 @@ public class IndexableList<E> {
   }
 
   public int size() {
-    return numElemEsquerda + numElemDireita + 1;
+    return numElemEsquerda + numElemDireita;
   }
 
 }
