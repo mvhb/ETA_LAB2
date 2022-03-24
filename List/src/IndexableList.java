@@ -80,7 +80,7 @@ public class IndexableList<E> {
   public void add(int index, E element) {
     if (index < (size() + 1) / 2) {
       if (arrayEsquerda.length == numElemEsquerda) {
-        aumentarEsquerdaArray(MAX_VALOR);
+        aumentarEsquerdaArray(1000);
       }
       numElemEsquerda++;
       for (int i = 0; i < index; i++) {
@@ -89,7 +89,7 @@ public class IndexableList<E> {
     }
     else {
       if (arrayDireita.length == numElemDireita) {
-        aumentarDireitaArray(MAX_VALOR);
+        aumentarDireitaArray(100);
       }
       numElemDireita++;
       for (int i = size()-1; i > index; i--) {
@@ -119,7 +119,7 @@ public class IndexableList<E> {
 
     for (int i = 0; i < numElemEsquerda; i++) {
       if (arrayEsquerda[i].equals(o)) {
-        return true;
+        return false;
       }
     }
 
@@ -139,7 +139,7 @@ public class IndexableList<E> {
     if (index < numElemEsquerda) {
       return (E) arrayEsquerda[numElemEsquerda - 1 - index];
     } else {
-      return (E) arrayDireita[index - numElemEsquerda];
+      return (E) arrayDireita[index - 1 - numElemEsquerda];
     }
   }
 
@@ -198,7 +198,7 @@ public class IndexableList<E> {
    * @return: e, elemento adicionado
    */
   public E set(int index, E elemento) {
-    E e = get(index);
+    E e = get(index-1);
     if (index < numElemEsquerda) {
       arrayEsquerda[numElemEsquerda - 1 - index] = elemento;
     } else {
