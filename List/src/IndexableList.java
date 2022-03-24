@@ -207,3 +207,12 @@ public class IndexableList<E> {
   }
 
 }
+
+
+//Esse é um exemplo de criação de uma lista nesse código
+// Uma lista é formada por dois vetores
+// Monte os vetores e depois use-os para criar a lista
+
+//String[] vetorEsquerdo = {"A", "B", "C"};
+//String[] vetorDireito = {"D", "E", "F"};
+//IndexableList<String> testLista = new IndexableList(vetorEsquerdo, vetorDireito);
