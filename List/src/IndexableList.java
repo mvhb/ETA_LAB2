@@ -66,7 +66,7 @@ public class IndexableList<E> {
    * @return: true se o elemento for adicionado com sucesso
    */
   public boolean prefixar(E e) {
-    add(0, e);
+    add(numElem1 + 1, e);
     return true;
   }
 
